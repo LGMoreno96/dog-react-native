@@ -55,6 +55,9 @@ You can logout by pressing the button at the top right corner, this will take yo
 ![Profile](images/profile-dog-app.png "Profile")
 
 ## Contributing
+Video:
+https://youtu.be/MF7mG60LKrY
+## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Contact Me
