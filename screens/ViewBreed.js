@@ -13,6 +13,7 @@ export default function App({ route, navigation }) {
     geSubBreed();
   }, []);
 
+  //FETCH RANDOM BREED IMAGE
   const getBreedImg = async () => {
     try {
       let resp = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
@@ -23,6 +24,7 @@ export default function App({ route, navigation }) {
     }
   };
 
+  //FETCH SUB BREEDS
   const geSubBreed = async () => {
     try {
       let resp = await fetch(`https://dog.ceo/api/breed/${breed}/list`);
@@ -42,6 +44,7 @@ export default function App({ route, navigation }) {
     }
   };
 
+  //FETCH RANDOM SUB BREED IMAGE
   const getSubBreedImg = () => {
     return new Promise(async (resolve, reject) => {
       let resp = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
@@ -50,6 +53,7 @@ export default function App({ route, navigation }) {
     });
   };
 
+  //RENDER
   const renderItem = ({ item, index }) => (
     <View style={styles.item}>
       <Image source={{ uri: subBreedImages[index] }} style={styles.breedImg} />
@@ -59,14 +63,17 @@ export default function App({ route, navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* HEADER */}
       <View style={styles.header}>
         <Ionicons name="arrow-back-outline" size={24} color="white" onPress={() => navigation.goBack()} />
         <Text style={{ color: "white", fontSize: 24, marginLeft: 5, fontWeight: 'bold' }}>BREED</Text>
       </View>
+      {/* BREED WINDOW */}
       <View style={styles.mainBreed}>
         <Image source={{ uri: breedImg }} style={styles.breedImg} />
         <Text style={styles.title}>{breed}</Text>
       </View>
+      {/* SUB BREEDS LIST */}
       <FlatList data={subBreed} renderItem={renderItem} keyExtractor={(item, index) => index.toString()} contentContainerStyle={{ paddingBottom: 70 }} />
     </SafeAreaView>
   );

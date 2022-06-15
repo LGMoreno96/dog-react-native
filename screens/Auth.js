@@ -29,10 +29,14 @@ export default function Login({ navigation }) {
   };
 
   return (
+
+    //Header
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.titletextContainer}>LOGIN</Text>
       </View>
+
+    {/* Fields */}
 
       <View style={styles.textboxContainer}>
         <TextInput
@@ -63,6 +67,9 @@ export default function Login({ navigation }) {
           onChangeText={(text) => setPassword(text)}
           right={<TextInput.Icon name={visible ? "eye" : "eye-off"} onPress={() => setVisible(!visible)} color={"#01B5E7"} />}
         />
+
+        {/* Continue Button */}
+
         <Button loading={load} mode="contained" color={"#01B5E7"} style={styles.button} onPress={loginHandler} labelStyle={{ color: "white" }}>
           Continue
         </Button>

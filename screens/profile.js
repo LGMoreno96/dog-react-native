@@ -10,6 +10,7 @@ export default function Profile({ navigation }) {
   const dispatch = useDispatch()
   const renderItems = ({ item }) => <Item name={item} navigation={navigation} />;
 
+  //LOGOUT
   const logout = async () => {
     AsyncStorage.removeItem("name");
     AsyncStorage.removeItem("email");
@@ -18,14 +19,17 @@ export default function Profile({ navigation }) {
   }
   return (
     <SafeAreaView style={styles.container}>
+      {/* HEADER */}
       <View style={styles.header}>
         <Text style={{ color: "white", fontSize: 24, marginLeft: 5, fontWeight: 'bold' }}>PROFILE</Text>
         <Button title="Logout" onPress={logout} />
       </View>
+      {/* USER INFO */}
       <View style={styles.body}>
         <Text style={styles.text}>{state.name}</Text>
         <Text style={styles.text}>{state.email}</Text>
       </View>
+      {/* FAVORITES LIST */}
       <Text style={styles.title}>Favorites</Text>
       <FlatList data={state.favorites} renderItem={renderItems} keyExtractor={(e, index) => index} />
     </SafeAreaView>

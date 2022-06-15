@@ -13,12 +13,14 @@ export default function App({ navigation }) {
     getApiData();
   }, []);
 
+  //SEARCHBAR FILTER
   const searchItem = (txt) => {
     const fil = breeds.filter((item) => item.name.toLowerCase().includes(txt.toLowerCase()));
     setSearchItems(fil);
     setSearch(txt);
   };
 
+  //FETCH BREEDS FROM API
   const getApiData = async () => {
     try {
       const resp = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -36,10 +38,13 @@ export default function App({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* HEADER */}
       <View style={styles.header}>
         <Text style={{ color: "white", fontSize: 24, marginLeft: 5, fontWeight: 'bold' }}>DOG APP</Text>
       </View>
+      {/* SEARCHBAR */}
       <TextInput onChangeText={(text) => searchItem(text)} value={search} placeholder={"Search..."} style={styles.input} />
+      {/* BREEDS LISTING */}
       <FlatList data={searchItems} renderItem={renderItems} keyExtractor={(e, index) => index} />
     </SafeAreaView>
   );
