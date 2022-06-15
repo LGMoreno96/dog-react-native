@@ -31,7 +31,7 @@ export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
-        <Text style={styles.titletextContainer}>Login</Text>
+        <Text style={styles.titletextContainer}>LOGIN</Text>
       </View>
 
       <View style={styles.textboxContainer}>
@@ -42,7 +42,7 @@ export default function Login({ navigation }) {
           autoComplete={false}
           style={{ marginTop: 5 }}
           onChangeText={(text) => setName(text)}
-          right={<TextInput.Icon name="account" color={"#2979ff"} />}
+          right={<TextInput.Icon name="account" color={"#01B5E7"} />}
         />
         <TextInput
           label="Email"
@@ -51,7 +51,7 @@ export default function Login({ navigation }) {
           autoComplete={false}
           style={{ marginTop: 5 }}
           onChangeText={(text) => setEmail(text)}
-          right={<TextInput.Icon name="email" color={"#2979ff"} />}
+          right={<TextInput.Icon name="email" color={"#01B5E7"} />}
         />
         <TextInput
           label="Password"
@@ -61,9 +61,9 @@ export default function Login({ navigation }) {
           style={{ marginTop: 5 }}
           secureTextEntry={!visible}
           onChangeText={(text) => setPassword(text)}
-          right={<TextInput.Icon name={visible ? "eye" : "eye-off"} onPress={() => setVisible(!visible)} color={"#2979ff"} />}
+          right={<TextInput.Icon name={visible ? "eye" : "eye-off"} onPress={() => setVisible(!visible)} color={"#01B5E7"} />}
         />
-        <Button loading={load} mode="contained" color={"#2979ff"} style={styles.button} onPress={loginHandler} labelStyle={{ color: "white" }}>
+        <Button loading={load} mode="contained" color={"#01B5E7"} style={styles.button} onPress={loginHandler} labelStyle={{ color: "white" }}>
           Continue
         </Button>
       </View>
@@ -80,14 +80,14 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingTop: 50,
     paddingBottom: 10,
-    backgroundColor: "#2979ff",
+    backgroundColor: "#01B5E7",
   },
   titletextContainer: {
-    fontSize: 18,
+    fontSize: 28,
     color: "white",
     marginLeft: 10,
     fontWeight: "bold",
-    fontFamily: "poppins-regular",
+    alignSelf: "center",
   },
   textboxContainer: {
     flex: 1,
@@ -99,6 +99,6 @@ const styles = StyleSheet.create({
     padding: 7,
     marginTop: 30,
     borderRadius: 5,
-    backgroundColor: "#2979ff",
+    backgroundColor: "#01B5E7",
   },
 });

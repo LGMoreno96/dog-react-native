@@ -1,6 +1,7 @@
 import Item from "../components/item";
 import { useState, useEffect } from "react";
-import { StyleSheet, SafeAreaView, TextInput, FlatList } from "react-native";
+import { StyleSheet, SafeAreaView, TextInput, FlatList, View, Text} from "react-native";
+
 
 export default function App({ navigation }) {
   const [search, setSearch] = useState("");
@@ -32,8 +33,12 @@ export default function App({ navigation }) {
 
   const renderItems = ({ item }) => <Item {...item} favorite={favorite} setFavorite={setFavorite} navigation={navigation} />;
 
+
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={{ color: "white", fontSize: 24, marginLeft: 5, fontWeight: 'bold' }}>DOG APP</Text>
+      </View>
       <TextInput onChangeText={(text) => searchItem(text)} value={search} placeholder={"Search..."} style={styles.input} />
       <FlatList data={searchItems} renderItem={renderItems} keyExtractor={(e, index) => index} />
     </SafeAreaView>
@@ -44,13 +49,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
-  header: {
-    paddingLeft: 6,
-    paddingVertical: 16,
-    alignItems: "center",
-    flexDirection: "row",
-    backgroundColor: "#01B5E7",
-  },
   input: {
     height: 40,
     padding: 10,
@@ -58,5 +56,15 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
     borderBottomWidth: 1,
+  },
+  header: {
+    paddingHorizontal: 6,
+    paddingVertical: 16,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#01B5E7",
+    width: "100%",
+    justifyContent: "center",
   },
 });

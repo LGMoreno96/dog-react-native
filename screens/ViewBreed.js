@@ -61,7 +61,7 @@ export default function App({ route, navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Ionicons name="arrow-back-outline" size={24} color="white" onPress={() => navigation.goBack()} />
-        <Text style={{ color: "white", fontSize: 16, marginLeft: 5 }}>View Breed</Text>
+        <Text style={{ color: "white", fontSize: 24, marginLeft: 5, fontWeight: 'bold' }}>BREED</Text>
       </View>
       <View style={styles.mainBreed}>
         <Image source={{ uri: breedImg }} style={styles.breedImg} />
