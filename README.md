@@ -22,17 +22,35 @@ w
 ## Screenshots
 **Login**
 
+A simple login screen where users add their Username, email and password for their account.
+
 ![Login](images/login-dog-app.png "Login")
 
 **Home page**
+
+Main screen of the app where all the breeds and sub breeds from the Dog API are listed.
+
+You can use the searchbar at the top to find an specific one and press the heart icon to add it to your favorite list.
 
 ![Home](images/home-dog-app.png "Home")
 
 **Specific Breed Selection**
 
+Once you select a breed or sub breed, this screen will show you a random photo fetched from the Dog API for that specific breed.
+
+If you scroll down you will see all the sub breeds. If you go back and press the breed again, new random photos will load.
+
 ![Breed](images/breed-dog-app.png "Breed")
 
 **Profile and Favorites List**
+
+In the profile page you can see your Username, email and the list of your favorite breeds.
+
+Press the name of the breed to take you to the Specific Breed Selection view.
+
+Press the heart to remove a breed from your favorite list.
+
+You can logout by pressing the button at the top right corner, this will take you to the login screen.
 
 ![Profile](images/profile-dog-app.png "Profile")
 
